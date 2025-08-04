@@ -1,0 +1,25 @@
+CUI(chracter user interface)
+=
+CLI(command line interface)
+command user interface
+
+윈+r -> 실행창 -> cmd 창이 뜸
+command prompt
+
+개발환경 설정학;
+1. node.js 설치
+2. git 
+3. Github CLI -> create repository
+
+서버 설정
+    Github
+    dothome
+    cafe24 -> 550won buy domain name
+    netlify
+
+CLI 방식으로 저장소 생성하기
+
+서버 업로드
+    gitignore.io --> .gitignore 로 업로드 제외 대상을 추가 설정
+    
+    
