@@ -22,4 +22,21 @@ CLI 방식으로 저장소 생성하기
 서버 업로드
     gitignore.io --> .gitignore 로 업로드 제외 대상을 추가 설정
     
+
+리액트 프로젝트 생성
+ 1. CDN
+ 2. CRA
+ 3. Vite
+
+ ES6
+  1. const, let
+  2. ()=>{}
+  3. (조건) ? 참 : 거짓
+  4. 모듈화: export, default, import
+  5. map()
+  6. ...
+
+
+  서비 실행 강제 종료 : ctrl+c
+  /ract
     
