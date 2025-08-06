@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>List rendering</title>
+        <!-- REACT LIBRARY -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            //App.js
+
+            {/* 리액트의 속성을 props라 부른다. */}
+            {/* <컴포넌트명 속성=값 /> */}
+            
+            function App(props) {
+                    const topics = {
+                        {id: 1, title: 'html', body: 'html is ...'},
+                        {id: 2, title: 'css', body: 'css is ...'},
+                        {id: 3, title: 'js', body: 'js is ...'}
+                    };
+                    return (
+                      <div>  <Header subject="WEB"></Header>
+                       <Nav topics={topics} />
+                       <Article  title="Welcome" body = "Hello, WEB" />
+                        </div>
+                    )
+                }
+
+
+            // function 컴포넌트, 함수 아님
+            // header
+            function Header(props) {
+            // props는 {subject: "React"}
+            // props.subject는 React
+                return (
+                    <header>
+                        <h1>
+                            <a href="/"> onClick={function(e){
+                                e.preventDefault();
+                                props.onChangeMode();
+                            } {props.subject}</a>
+                        </h1>
+                    </header>
+                )};
+
+            // Nav
+            function Nav(props) {
+                const lis = [];
+                  //  <li><a href="/read/1">{props.topics}</a></li>
+                  //  <li><a href="/read/2">css</a></li>
+                  //  <li><a href="/read/3">js</a></li>
+
+                for (let i=0; i<props.topics.length; i++) {
+                   let t=props.topics[i];
+                    lis.push(<li kry={t.id}><a=href="/read/"+{t.id}>{t.title</a></li>);
+                }
+            return (
+                <nav>
+                    <ol>
+                        {lis}
+                    </ol>
+                </nav>
+            )
+        }
+        
+             // article
+            function Article(props) {
+            return (
+                <article>
+                    <h2>{props.title}</h2>
+                        {props.body}
+                        Hello, WEB
+                        </article>
+                    );
+                }
+
+        // index.js
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+  </body>
+</html>

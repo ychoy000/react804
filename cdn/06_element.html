@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List rendering</title>
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //App.js
+        /* 
+            React Element
+                1. 리액트에서 화면(UI)을 구성하는 가장 작은 단위
+                2, 화면에 표시될 내용을 기술하는 자바스크립트 객체
+                3. HTML의 태그를 자바스크립트 코드로 표현한 형태
+        */
+const element1 = <h1>Hello, React!</h1>;
+//이 JSX 코드는 내부적으로 다음과 같은 React.createElement 함수로 변환됩니다:
+const element2 = React.createElement('h1', null, 'Hello, React!');
+const element3 = {
+  type: 'h1',
+  props: {
+    children: 'Hello, React!'
+  }
+}      
+
+// index.js
+    
+       
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<element1 />,
+                 <element2 />
+                  );
+    </script>
+  </body>
+</html>

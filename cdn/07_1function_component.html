@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List rendering</title>
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //App.js
+
+      function Header() {
+        return (
+          <header>
+            <h1>
+              <a href="/">WEB</a>
+            </h1>
+          </header>
+        );
+      }
+
+      function Nav() {
+        return (
+          <nav>
+            <ol>
+              <li>
+                <a href="/read/1">html</a>
+              </li>
+              <li>
+                <a href="/read/2">css</a>
+              </li>
+              <li>
+                <a href="/read/3">js</a>
+              </li>
+            </ol>
+          </nav>
+        );
+      }
+
+      function Article() {
+        return (
+          <article>
+            <h2>Welcome</h2>
+            Hello, WEB
+          </article>
+        );
+      }
+      function App() {
+        return (
+          <div>
+            <Header></Header>
+            <Nav></Nav>
+            <Article></Article>
+          </div>
+        );
+      }
+
+      // index.js
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        <>
+          <App />
+        </>
+      );
+    </script>
+  </body>
+</html>

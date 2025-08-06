@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List rendering</title>
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //App.js
+        const fruits = ['🍎 Apple', '🍌 Banana', '🍇 Grape'];
+          function FruitList() {
+          return (
+            <ul>
+                {fruits.map((fruit, index) => (
+                <li key={index}>{fruit}</li>
+                  ))}
+                  </ul>
+
+        const users = [
+        { id: 'u1', name: 'Alice' },
+        { id: 'u2', name: 'Bob' },
+      ];
+        function UserList() {
+            return (
+                <ul>
+                  {users.map(user => (
+                    <li key={user.id}>{user.name}</li>
+                  ))}
+                </ul>
+            )
+        }
+        // key는 항목마다 고유해야 하며, index는 임시로만 사용하는 것이 좋음. 가능하면 고유 아아디 사용
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<FruitList />,
+                 <UserList />
+                  );
+    </script>
+  </body>
+</html>
