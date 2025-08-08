@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- React, ReactDOM, Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>리액트: state+event</title>
+  </head>
+
+  <body>
+    <!-- index.html -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // CRA ir Vite
+      // import {useState} from 'react';
+
+      // CDN
+      // 구조분해 할당 방식
+      const {useState} = React;
+
+      function Counter() {
+          // Hook - useState()
+              // const [변수, set변수] = useState(초깃값);
+              const [count, setCount] = useState(0);
+
+              // const handleAdd = () => {
+                  //    return setCount(count + 1);
+                  // };
+                  const handleCount = (num) => {
+                      setCount((preCount) => {
+                          const newCount = preCount + num;
+                          // 0 이하이면 감소하지 않게
+              if (newCount <=0) return 0;
+              return newCount(count + num);
+          })
+      };
+
+      function App() {
+          // 매개변수가 없으면 함수 이름만 -> onClick={함수명}
+          // 매개변수가 있는 경우 -> onClick={()=>함수명()}
+
+          // const handleSubtract = () => {
+              //    return setCount(count - 1);
+              // };
+        return (
+            <div>
+                <Counter />
+            </div>
+        );
+    }
+    
+    // index.js
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+        <>
+        <App />
+        <p>카운트: {count} </p>
+        <button onClick={()=> handleCount(+1)}>+1</button>
+        <button onClick={()=> handleCount(-1)}>-1</button>
+        </>);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>리액트: props</title>
+  </head>
+
+  <body>
+    <!-- index.html -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // App.js
+
+      // 함수형 컴포넌트
+      /* 
+      props
+        컴포넌트 간 데이터를 전달하는 방법
+        단방향: 부모 -> 자식 방향으로만 전달됨
+        읽기 전용 데이터
+
+        function Comp(props){
+        return 값;
+        }
+        <Comp 속성="값" 속성="값"></Comp>
+        <Comp 속성="값" 속성="값" />
+      */
+      /*       function App(props) {
+        return (
+        <div>
+            <h1>안녕하세요, {props.age}살 {props.name}님!</h1>
+            <h2>{props.age}살 님!</h2>
+        </div>);
+      }
+ */
+      //부모 컨포넌트
+      /* 
+        <App>
+            <Welcome />    
+        </App>
+ */
+      function App() {
+        return <Welcome name="React Developer" age="20" />;
+        
+            <Counter onClick={handleClick} />;
+      }
+      //자식 컴포넌트
+      // 구조 분해 할당
+      // function Welcome(props) {
+      function Welcome({ name, age }) {
+        // return <h1>안녕하세요. {props.name} 님!</h1>
+        return (
+          <h1>
+            안녕하세요. {age} 살 {name} 님!
+          </h1>
+        );
+      }
+
+      function Profile({ name, age, job }) {
+        return (
+          <div>
+            <p>이름: {name}</p>
+            <p>나이: {age}</p>
+            <p>직업: {job}</p>
+          </div>
+        );
+      }
+
+    function handleClick(count){
+        return count++;
+    }
+      // props에 함수 전달
+
+      // index.js
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
