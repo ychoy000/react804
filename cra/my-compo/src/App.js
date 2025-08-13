@@ -1,14 +1,18 @@
 // import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 // in cases of CRA, Vite 
 import { useState } from 'react';
 // in case of CDN
 // const {useState} = React;
 function App() {
+    const _mode = useState('Welcome');
+    const mode=_mode[0];
+    const setMode = _mode[1];
+    
+    console.log('_mode',_mode);
   return (
     // App.js
     // const {변수, 함수} = useState(초기값);
-    const [mode, set]
     function App() {
             const mode = 'WELCOME';
             const topics = [
@@ -36,7 +40,6 @@ function App() {
                     <Article title="Welcome" body="Hello, WEB" />
                 </div>
             );
-        }
 
         // Header
         function Header(props) {
