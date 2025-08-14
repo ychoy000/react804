@@ -1,0 +1,9 @@
+.gnb {
+  padding: 10px;
+}
+.gnb_link {
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+}
